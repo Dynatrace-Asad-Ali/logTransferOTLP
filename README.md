@@ -3,6 +3,7 @@ This repository contain sample Java and dotNet application that uses log4j and l
 
 ### dotNet setup instructions
 For log4net, these 4 environment variables are needed to ship the logs to Dynatrace
+
 set OTEL_EXPORTER_OTLP_ENDPOINT=<Dynatrace end point>
 
 set OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
