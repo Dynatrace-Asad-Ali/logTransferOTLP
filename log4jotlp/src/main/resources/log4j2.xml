@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="io.opentelemetry.instrumentation.log4j.appender.v2_17">
+    <Appenders>
+<Console name="ConsoleJSONAppender" target="SYSTEM_OUT">
+        <JsonLayout complete="false" compact="false">
+            <KeyValuePair key="myCustomField" value="myCustomValue"/>
+        </JsonLayout>
+    </Console>
+        <!-- <OpenTelemetry name="OpenTelemetry" captureMapMessageAttributes="true" captureExperimentalAttributes="true" /> -->
+        <File name="File" fileName="logs/hotday-${env:DEMO_PURPOSE}.log">
+            <PatternLayout>
+                <Pattern>[%d{HH:mm:ss}] [%-5level] [%c{1}] %msg %throwable{short}%n</Pattern>
+            </PatternLayout>
+        </File>
+        <Http name="HTTP" url="https://<tenant>.live.dynatrace.com/api/v2/logs/ingest">
+            <Property name="X-Java-Version" value="${java:version}"/> 
+            <Property name="X-Context-Path" value="$${web:contextPath}"/>
+            <Property name="Authorization" value="Api-token dt0c01.xxx"/>
+            <Property name="content-type" value="application/json"/>
+        <JsonLayout complete="false" compact="false">
+            <KeyValuePair key="myCustomField" value="myCustomValue"/>
+        </JsonLayout>
+       <!--   <PatternLayout>
+                <Pattern>[%d{HH:mm:ss}] [%-5level] [%c{1}] %msg %throwable{short}%n</Pattern>
+            </PatternLayout> -->
+        </Http>
+    </Appenders>
+    <Loggers>
+        <Root level="trace">
+            <!-- <AppenderRef ref="OpenTelemetry" /> -->
+            <AppenderRef ref="ConsoleJSONAppender" />
+            <AppenderRef ref="File" />
+            <AppenderRef ref="HTTP" />
+        </Root>
+    </Loggers>
+</Configuration>

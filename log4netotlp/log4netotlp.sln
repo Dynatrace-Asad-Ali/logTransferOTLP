@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4netotlp", "log4netotlp.csproj", "{465B058A-2D53-9BEF-303A-EDE00DDC3303}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{465B058A-2D53-9BEF-303A-EDE00DDC3303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{465B058A-2D53-9BEF-303A-EDE00DDC3303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{465B058A-2D53-9BEF-303A-EDE00DDC3303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{465B058A-2D53-9BEF-303A-EDE00DDC3303}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB0645F7-692F-4FE7-9648-E84DDD2E0CBA}
+	EndGlobalSection
+EndGlobal
